@@ -29,6 +29,8 @@ prepare() {
   git submodule init
   git config submodule.util.url "$srcdir"/util
   git submodule update
+  patch --forward --strip=1 --input="${srcdir}/static-vte.patch"
+  patch --forward --strip=1 --input="${srcdir}/term-variable.patch"
 }
 
 build() {
