@@ -1,0 +1,12 @@
+diff --unified --recursive --text termite/Makefile termite-patched/Makefile
+--- termite/Makefile	2019-11-14 16:10:55.976986978 -0500
++++ termite-patched/Makefile	2019-11-14 16:20:53.040377797 -0500
+@@ -33,7 +33,7 @@
+ endif
+ 
+ LDFLAGS := -s -Wl,--as-needed ${LDFLAGS}
+-LDLIBS := ${shell pkg-config --libs ${GTK} ${VTE}}
++LDLIBS := ${shell pkg-config --libs ${GTK} ${VTE} | sed s/l${VTE}/l:lib${VTE}.a/}
+ 
+ termite: termite.cc url_regex.hh util/clamp.hh util/maybe.hh util/memory.hh
+ 	${CXX} ${CXXFLAGS} ${LDFLAGS} $< ${LDLIBS} -o $@
