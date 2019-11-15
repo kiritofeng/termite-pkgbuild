@@ -1,6 +1,6 @@
 diff --unified --recursive --text termite/termite.cc termite-moddedd/termite.cc
 --- termite/termite.cc	2019-11-14 16:10:55.976986978 -0500
-+++ termite-moddedd/termite.cc	2019-11-14 16:13:44.783669902 -0500
++++ termite-patched/termite.cc	2019-11-14 16:13:44.783669902 -0500
 @@ -1638,7 +1638,6 @@
  
  int main(int argc, char **argv) {
